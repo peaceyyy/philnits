@@ -21,7 +21,9 @@ const DEFAULT_PREVIEW_OPTIONS: MarkdownPreviewProps = {
 
 			return <div {...rest} />;
 		},
-		img: ({ src, alt, ...rest }) => {
+		
+		// eslint-disable-next-line @typescript-eslint/no-unused-vars -- omit width/height so rest doesn't override Image props
+		img: ({ src, alt, width: _w, height: _h, ...rest }) => {
 			if (!src) return null;
 			return (
 				<Image
