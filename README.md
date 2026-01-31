@@ -10,7 +10,7 @@ This repository hosts an online PhilNITS FE AM Mock Examination, developed using
 - After completing the quiz, you'll receive **detailed explanations** for each question.
 - You can **retake the quiz multiple times**, with different sets of questions.
 
-## 🔧 Content Management Pipelinen (By Homer Adriel Dorin)
+## 🔧 Content Management Pipeline (By Homer Adriel Dorin)
 
 This project includes a unified pipeline for extracting exam questions from PDFs and converting them into web-ready JSON format.
 
