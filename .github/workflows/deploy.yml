@@ -38,7 +38,7 @@ jobs:
       - name: Upload static site via SSH
         run: |
           cd $GITHUB_WORKSPACE
-          tar czf - out | ssh -p ${{ secrets.DCISM_PORT }} ${{ secrets.DCISM_EMAIL }}@${{ secrets.DCISM_HOST }} "tar xzf - -C ~/philnits.dcism.org/"
+          tar czf - out | ssh -p 22077 ${{ secrets.DCISM_EMAIL }}@${{ secrets.DCISM_HOST }} "tar xzf - -C ~/philnits.dcism.org/"
 
       # Optional: show deployed files
       - name: List files on server
