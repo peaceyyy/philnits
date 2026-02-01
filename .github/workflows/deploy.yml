@@ -34,12 +34,16 @@ jobs:
       - name: List out folder
         run: ls -la out
 
-      # Upload /out folder via tar-over-SSH
-      - name: Upload static site via SSH
+      # Upload via tar-over-SSH
+      - name: Upload via tar-over-SSH
         run: |
-          cd $GITHUB_WORKSPACE
-          tar czf - out | ssh -p 22077 ${{ secrets.DCISM_EMAIL }}@${{ secrets.DCISM_HOST }} "tar xzf - -C ~/philnits.dcism.org/"
-
+          sudo apt-get update && sudo apt-get install -y sshpass
+          cd out
+          sshpass -p "${{ secrets.DCISM_PASSWORD }}" \
+            ssh -o StrictHostKeyChecking=no -p ${{ secrets.DCISM_PORT }} \
+            ${{ secrets.DCISM_EMAIL }}@${{ secrets.DCISM_HOST }} \
+            "mkdir -p ~/philnits.dcism.org && tar xzf - -C ~/philnits.dcism.org" < <(tar czf - .)
+      
       # Optional: show deployed files
       - name: List files on server
         uses: appleboy/ssh-action@v1.2.0
