@@ -1,11 +1,12 @@
 import Image from "next/image"
+import { assetPath } from "@/lib/utils"
 
 export default function Footer() {
     return (
       <footer className="mt-4 bg-primary p-6 pb-4 text-xl">
         <Image
           className="mx-auto h-6 w-auto"
-          src="/cisco-logo-white.png"
+          src={assetPath("cisco-logo-white.png")}
           alt="White transparent picture of the CISCO logo"
           width={120}
           height={24}

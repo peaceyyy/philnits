@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button"
 import type { QuizQuestion } from "@/assets/data"
+import { assetPath } from "@/lib/utils"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 import React from "react"
 import Markdown from "@/components/Markdown"
@@ -68,7 +69,7 @@ export default function Results({ quizData, userAnswers, onRestart, onNewQuiz, t
           {question.compositeImage ? (
             <div className="border border-border rounded-lg overflow-hidden my-4">
               <Image
-                src={`/${question.compositeImage}`}
+                src={assetPath(question.compositeImage)}
                 alt="Question and choices"
                 width={800}
                 height={600}
@@ -86,7 +87,7 @@ export default function Results({ quizData, userAnswers, onRestart, onNewQuiz, t
           {question.choiceImage && !question.compositeImage && (
             <div className="border border-border rounded-lg overflow-hidden my-4">
               <Image
-                src={`/${question.choiceImage}`}
+                src={assetPath(question.choiceImage)}
                 alt="Answer choices"
                 width={800}
                 height={400}

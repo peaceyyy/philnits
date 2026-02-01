@@ -8,6 +8,7 @@ import rehypeSanitize from "rehype-sanitize";
 import rehypeStringify from "rehype-stringify";
 import remarkMath from "remark-math";
 import remarkRehype from "remark-rehype";
+import { assetPath } from "@/lib/utils";
 
 const DEFAULT_PREVIEW_OPTIONS: MarkdownPreviewProps = {
 	remarkPlugins: [remarkMath, remarkRehype],
@@ -27,7 +28,7 @@ const DEFAULT_PREVIEW_OPTIONS: MarkdownPreviewProps = {
 			if (!src) return null;
 			return (
 				<Image
-					src={`/${src}`}
+					src={assetPath(src)}
 					alt={alt || 'Question diagram'}
 					width={600}
 					height={400}

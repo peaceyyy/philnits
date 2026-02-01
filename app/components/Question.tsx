@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button"
 import Markdown from "@/components/Markdown"
 import Image from "next/image"
+import { assetPath } from "@/lib/utils"
 
 interface QuestionProps {
   id: string
@@ -39,7 +40,7 @@ export default function Question({
         <h2 className="font-bold text-sm">{id}</h2>
         <div className="border border-border rounded-lg overflow-hidden my-4">
           <Image
-            src={`/${compositeImage}`}
+            src={assetPath(compositeImage)}
             alt="Question and choices"
             width={800}
             height={600}
@@ -78,7 +79,7 @@ export default function Question({
         </div>
         <div className="border border-border rounded-lg overflow-hidden my-4">
           <Image
-            src={`/${choiceImage}`}
+            src={assetPath(choiceImage)}
             alt="Answer choices"
             width={800}
             height={400}
