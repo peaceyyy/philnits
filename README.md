@@ -47,8 +47,8 @@ For detailed pipeline documentation, see PIPELINE_USAGE.md under scripts/ for mo
 1. **Clone the repository:**
 
    ```sh
-   git clone https://github.com/elderfieldzeus/philnits.git
-   cd philnits
+   git clone https://github.com/usc-cisco/philnits-mock.git
+   cd philnits-mock
    ```
 2. **Install dependencies:**
 

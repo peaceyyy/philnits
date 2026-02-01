@@ -16,7 +16,7 @@ export default function Footer() {
           <span>
             © {new Date().getFullYear()}{" "}
             <a
-              href="https://github.com/elderfieldzeus/philnits"
+              href="https://github.com/usc-cisco/philnits-mock"
               className="rounded-md underline ring-white focus:outline-none focus:ring-1 focus:ring-opacity-75"
               target="_blank"
               rel="noopener noreferrer"
