@@ -17,13 +17,11 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
 
   useEffect(() => {
     setMounted(true)
-    // Load theme from localStorage
     const savedTheme = localStorage.getItem("theme") as Theme | null
     if (savedTheme) {
       setTheme(savedTheme)
       document.documentElement.classList.toggle("dark", savedTheme === "dark")
     } else {
-      // Apply light mode on first load
       document.documentElement.classList.remove("dark")
     }
   }, [])

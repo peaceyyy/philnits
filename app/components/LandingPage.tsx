@@ -37,14 +37,16 @@ export default function LandingPage({
     }
 
     return "60"
-  })
-
+  })  
+  
   // Update selected year when prop changes
+
   useEffect(() => {
     setSelectedYear(propSelectedYear)
   }, [propSelectedYear])
 
-  // Calculate max questions based on selected year
+  
+// Calculate max questions based on year
   const maxQuestions = devModeYear 
     ? visualContentCount || 0
     : selectedYear === "all"

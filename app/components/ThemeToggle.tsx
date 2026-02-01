@@ -13,7 +13,6 @@ export default function ThemeToggle() {
     setMounted(true)
   }, [])
 
-  // Prevent hydration mismatch by not rendering until client-side
   if (!mounted) {
     return (
       <Button
