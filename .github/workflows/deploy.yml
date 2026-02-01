@@ -1,4 +1,4 @@
-name: Deployment
+name: Deploy PhilNITS (Static Export)
 
 on:
   push:
@@ -8,32 +8,45 @@ on:
 
 jobs:
   build-and-deploy:
-    name: Deploy PhilNITS
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout
+      # Checkout repository
+      - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Setup Node
+      # Setup Node.js
+      - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 18
           cache: npm
 
+      # Install dependencies
       - name: Install dependencies
         run: npm ci
 
+      # Build static export
       - name: Build project (static export)
         run: npm run build
 
-      - name: Upload static site (/out)
-        uses: appleboy/scp-action@v0.1.7
+      # Test static export locally (optional)
+      - name: List out folder
+        run: ls -la out
+
+      # Upload /out folder via tar-over-SSH
+      - name: Upload static site via SSH
+        run: |
+          cd $GITHUB_WORKSPACE
+          tar czf - out | ssh -p ${{ secrets.DCISM_PORT }} ${{ secrets.DCISM_EMAIL }}@${{ secrets.DCISM_HOST }} "tar xzf - -C ~/philnits.dcism.org/"
+
+      # Optional: show deployed files
+      - name: List files on server
+        uses: appleboy/ssh-action@v1.2.0
         with:
           host: ${{ secrets.DCISM_HOST }}
           username: ${{ secrets.DCISM_EMAIL }}
           password: ${{ secrets.DCISM_PASSWORD }}
           port: ${{ secrets.DCISM_PORT }}
-          source: "out/*"
-          target: "~/philnits.dcism.org/"
-          overwrite: true
+          script: |
+            ls -la ~/philnits.dcism.org
