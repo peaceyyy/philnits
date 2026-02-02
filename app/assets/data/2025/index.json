@@ -307,7 +307,7 @@
     "options": [
       "Customer code | Customer name | Representative name",
       "Customer code | Customer name | Representative name | Employee code",
-      "Customer code |Customer name | Representative name | Region code",
+      "Customer code | Customer name | Representative name | Region code",
       "Customer code | Customer name | Representative name | Employee code | Region code"
     ],
     "correctAnswer": 3,
@@ -320,7 +320,7 @@
       "Providing redundancy to data in order to detect data errors",
       "Eliminating data inconsistencies and duplications in order to make it easy to maintain and manage the data",
       "Unifying the character code of data in order to improve data reliability and storage efficiency",
-      "Losslessly compressing data in order to improve access efficiency – 14 –"
+      "Losslessly compressing data in order to improve access efficiency"
     ],
     "correctAnswer": 1,
     "solution": ""
@@ -412,7 +412,7 @@
   },
   {
     "id": "2025_FE-A_35",
-    "question": "Among descriptions A through D concerning how to conduct information security \neducation to employees, which of the following contains all and only the appropriate \ndescriptions? \n \nA \nThe re-education of one who has committed an information security breach includes \npreventive actions to avoid the same fault being repeated. \n\nB \nOne way to conduct it is to incorporate it in a training program for new employees. \n\nC \nIt is restricted to employees in the information systems department. \n\nD It is conducted after an incident or an accident concerning information security as \nwell as on a regular basis.",
+    "question": "Among descriptions A through D concerning how to conduct information security \neducation to employees, which of the following contains all and only the appropriate \ndescriptions? \n \nA: \nThe re-education of one who has committed an information security breach includes \npreventive actions to avoid the same fault being repeated. \n\nB: \nOne way to conduct it is to incorporate it in a training program for new employees. \n\nC: \nIt is restricted to employees in the information systems department. \n\nD: It is conducted after an incident or an accident concerning information security as \nwell as on a regular basis.",
     "options": [
       "A, B, D",
       "A, C, D",
@@ -424,7 +424,7 @@
   },
   {
     "id": "2025_FE-A_36",
-    "question": "Among the descriptions A through D of how to handle a contact list that includes \ncustomer names, addresses, and other information, which of the following contains all and \nonly the appropriate descriptions in terms of personal information protection? \n \nA \nEven if a customer asks to check his/her own registration information, this cannot be \ndisclosed on the grounds of information protection. \n\nB \nA list of all names and addresses is extracted from the contact list and is sent to all the \ncustomers to have them check for errors. \n\nC \nA CD-ROM that includes contact list data is to be shredded before it is discarded. \n\nD Contact list data is to be encrypted when it is stored in a file.",
+    "question": "Among the descriptions A through D of how to handle a contact list that includes \ncustomer names, addresses, and other information, which of the following contains all and \nonly the appropriate descriptions in terms of personal information protection? \n \nA: \nEven if a customer asks to check his/her own registration information, this cannot be \ndisclosed on the grounds of information protection. \n\nB: \nA list of all names and addresses is extracted from the contact list and is sent to all the \ncustomers to have them check for errors. \n\nC: \nA CD-ROM that includes contact list data is to be shredded before it is discarded. \n\nD: Contact list data is to be encrypted when it is stored in a file.",
     "options": [
       "A, C, D",
       "A, D",
