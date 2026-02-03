@@ -4,10 +4,6 @@
  * Provides deterministic shuffling of answer choices based on question ID.
  */
 
-/**
- * @param seed - String to use as seed (typically question ID)
- * @returns Random number between 0 and 1
- */
 function seededRandom(seed: string): () => number {
   let hash = 0;
   for (let i = 0; i < seed.length; i++) {
@@ -26,8 +22,6 @@ function seededRandom(seed: string): () => number {
 
 /**
  * Fisher-Yates shuffle algorithm with seeded randomization
- * @param array - Array to shuffle
- * @param seed - Seed string for deterministic shuffling
  * @returns New shuffled array (does not mutate original)
  */
 export function shuffleArray<T>(array: T[], seed: string): T[] {
@@ -44,10 +38,6 @@ export function shuffleArray<T>(array: T[], seed: string): T[] {
 
 /**
  * Shuffle answer choices and update the correct answer index
- * @param options - Array of answer choice strings
- * @param correctAnswer - Original index of correct answer (0-indexed)
- * @param questionId - Unique question identifier for seeding
- * @returns Object with shuffled options and new correct answer index
  */
 export function shuffleChoices(
   options: string[],
@@ -71,15 +61,12 @@ export function shuffleChoices(
 }
 
 /**
- * Determine if a question should have its choices shuffled
  * Questions with visual content (images for choices or composite images) should not be shuffled
- * @param question - Quiz question object
  * @returns true if question should be shuffled, false otherwise
  */
 export function shouldShuffleQuestion(question: {
   choiceImage?: string;
   compositeImage?: string;
 }): boolean {
-  // Don't shuffle if question has choice images or composite images
   return !question.choiceImage && !question.compositeImage;
 }

@@ -121,7 +121,7 @@ export default function Quiz() {
             q.id,
           );
 
-          // Debug logging - only in dev mode
+          // only in dev mode
           if (process.env.NODE_ENV === "development" || devModeYear) {
             console.log(`Shuffled ${q.id}:`);
             console.log(
@@ -139,7 +139,7 @@ export default function Quiz() {
             correctAnswer: shuffledCorrectAnswer,
           };
         }
-        // Keep original order for questions with visual content
+        // Keep original order for questions with visuals
         if (process.env.NODE_ENV === "development" || devModeYear) {
           console.log(`⏭Skipped shuffling ${q.id} (has visual content)`);
         }
