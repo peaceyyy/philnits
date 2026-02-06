@@ -15,7 +15,21 @@ following is the correct description concerning the output?`,
       "The output of “Agree” is generated only when all three (3) inputs are “Agree.”",
     ],
     correctAnswer: 3,
-    solution: "",
+    solution: `
+    ## Problem Framing
+    We are looking at a system of cascaded logic boxes. The goal is to determine the condition required to get a final output of "Agree".
+    
+    ### Guided Construction: Identifying the "Gate"
+    The key is in the definition of the box:"...the output of 'Agree' is generated only when both inputs are 'Agree'..."
+    
+    In Computer Science terms, this is the definition of an AND Gate. If we let "Agree" = 1 (True) and "Disagree" = 0 (False), the box performs the operation:
+    
+    Output = Input_1 \cdot Input_2
+    
+    A single "Disagree" (False) anywhere in the chain messes up the whole thing and forces the final output to be "Disagree".
+
+  Therefore, the final output is "Agree" if and only if all three inputs are "Agree" (d.).
+    `,
   },
   {
     id: "2025_FE-A_2",
